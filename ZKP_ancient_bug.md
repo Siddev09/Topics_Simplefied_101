@@ -173,8 +173,6 @@ Defense: Basically none
 
 ---
 
-## Why This Is So Bad
-
 ### 1. No Detection
 
 - Requesting tickets is normal behavior
@@ -217,47 +215,14 @@ In May 2024, ransomware attackers used Kerberoasting against Ascension Health ho
 
 ## The Core Lessons
 
-### For Beginners:
-
 1. **Old crypto is dangerous:** RC4 from the 1990s should be dead but isn't
 2. **Offline attacks are powerful:** Once attackers steal encrypted data, they can crack it at leisure
 3. **Defense in depth matters:** One weak Service account can compromise everything
 4. **Legacy support is a security nightmare:** Supporting old systems for compatibility creates vulnerabilities
 
-### For Everyone:
-
-**Microsoft should kill RC4 entirely.** Not "recommend disabling it" or "suggest better passwords." Just kill it. It's 2025.
-
 ---
 
-## Technical Summary
 
-**Kerberoasting exploits:**
-
-1. Active Directory's design (anyone can request Service tickets)
-2. Weak human-generated passwords on Service accounts
-3. Legacy RC4 encryption still supported as fallback
-4. Offline cracking attacks (no detection possible)
-
-**The fix requires:**
-
-- Mandatory strong random keys for Services
-- Complete removal of RC4 support
-- Proactive enforcement by Microsoft (not optional recommendations)
-
-**The reality:**
-
-- Known since 2014
-- Still happening in 2024
-- Will probably continue until Microsoft forces change
-
----
-
-## Bottom Line
-
-Kerberoasting is a **preventable disaster** that exists because:
-
-- Microsoft won't kill ancient cryptography
 - Admins don't always follow best practices
 - One weak password + RC4 = instant compromise
 
